@@ -1,6 +1,0 @@
-/home/mars/code/m_websever/build/CMakeFiles/http_server.dir
-/home/mars/code/m_websever/build/CMakeFiles/edit_cache.dir
-/home/mars/code/m_websever/build/CMakeFiles/rebuild_cache.dir
-/home/mars/code/m_websever/build/m_netlib/CMakeFiles/m_netlib.dir
-/home/mars/code/m_websever/build/m_netlib/CMakeFiles/edit_cache.dir
-/home/mars/code/m_websever/build/m_netlib/CMakeFiles/rebuild_cache.dir
