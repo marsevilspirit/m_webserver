@@ -1,0 +1,52 @@
+add_library(m_netlib
+    Base/Timestamp.cc 
+    Base/Timestamp.h 
+    Base/copyable.h 
+    Base/noncopyable.h 
+    Log/mars_logger.cc 
+    Log/mars_logger.h 
+    Net/Channel.cc 
+    Net/Channel.h
+    Net/EventLoop.cc
+    Net/EventLoop.h
+    Net/EventLoopThread.cc
+    Net/EventLoopThread.h
+    Net/EventLoopThreadPool.cc
+    Net/EventLoopThreadPool.h
+    Socket/InetAddress.cc
+    Socket/InetAddress.h
+    Net/EPoller.cc
+    Net/EPoller.h
+    Socket/Socket.cc
+    Socket/Socket.h
+    Socket/SocketOps.cc
+    Socket/SocketOps.h
+    Net/TcpClient.cc
+    Net/TcpClient.h
+    Net/TcpConnection.cc
+    Net/TcpConnection.h
+    Net/TcpServer.cc
+    Net/TcpServer.h
+    Net/TimerQueue.cc
+    Net/TimerQueue.h
+    Net/Timer.cc
+    Net/Timer.h
+    Net/TimerId.h
+    Net/Callbacks.h
+    Net/Buffer.cc 
+    Net/Buffer.h
+    Net/Connector.cc 
+    Net/Connector.h
+    Net/Acceptor.cc 
+    Net/Acceptor.h
+    Net/Connector.cc 
+    Net/Connector.h
+)
+
+target_link_libraries(m_netlib -lfmt -lstdc++fs -ljsoncpp)
+
+# 设置头文件路径（如果有头文件的话）
+target_include_directories(m_netlib
+    PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
