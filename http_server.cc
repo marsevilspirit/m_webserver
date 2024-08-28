@@ -18,6 +18,8 @@ HttpServer::HttpServer(EventLoop* loop, const InetAddress& listenAddr)
 {
     m_server.setConnectionCallback(std::bind(&HttpServer::onConnection, this, std::placeholders::_1));
     m_server.setMessageCallback(std::bind(&HttpServer::onMessage, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+
+    m_server.setThreadNum(0);
 }
 
 void HttpServer::start()
@@ -69,6 +71,7 @@ void HttpServer::onRequest(const TcpConnectionPtr& conn, const HttpRequest& req)
     m_httpCallback(req, &response); 
     Buffer buf;   //用户处理后的信息，追加到缓冲区
     response.appendToBuffer(&buf);
+    LogError("onRequest response");
     conn->send(&buf);  //发送数据
     if (response.closeConnection())  //如果关闭
     {
